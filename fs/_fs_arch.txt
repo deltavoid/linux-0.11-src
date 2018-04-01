@@ -1,0 +1,51 @@
+
+
+fs
+    上层：文件系统接口
+    下层：设备驱动程序
+    主体：一组算法，如何把字节数组组织成文件目录结构
+
+    上层接口
+        open  
+        stat  
+        fcntl  
+        ioctl  
+        execve
+    文件类型
+        正规文件  
+        目录文件
+        块设备文件
+        字符设备文件
+        管道文件
+    主体实现
+        super
+        bitmap
+        inode
+        namei
+        truncate
+    缓冲
+        buffer
+        ll_rw_blk
+
+
+open
+fcntl
+ioctl
+stat
+select
+exec
+file_table
+
+read_write
+file_dev
+char_dev
+block_dev
+pipe
+
+super
+bitmap
+inode
+namei
+truncate
+
+buffer
