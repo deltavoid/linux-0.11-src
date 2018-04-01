@@ -244,7 +244,7 @@ void un_wp_page(unsigned long * table_entry)
  *
  * If it's in code space we exit with a segment error.
  */
-void do_wp_page(unsigned long error_code,unsigned long address)
+void do_wp_page(unsigned long error_code,unsigned long address)  //do_wp_page
 {
 #if 0
 /* we cannot do this yet: the estdio library writes to code space */
@@ -362,7 +362,7 @@ static int share_page(unsigned long address)
 	return 0;
 }
 
-void do_no_page(unsigned long error_code,unsigned long address)
+void do_no_page(unsigned long error_code,unsigned long address)  //do_no_page
 {
 	int nr[4];
 	unsigned long tmp;
@@ -396,6 +396,7 @@ void do_no_page(unsigned long error_code,unsigned long address)
 	oom();
 }
 
+//init
 void mem_init(long start_mem, long end_mem)
 {
 	int i;

@@ -38,3 +38,7 @@ _page_fault:
 	popl %ecx
 	popl %eax
 	iret
+
+/*
+    int14  page_fault
+*/
