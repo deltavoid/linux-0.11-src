@@ -1,0 +1,107 @@
+
+
+
+
+program
+
+    程序（代码，数据，堆栈）
+    运行（CPU，内存，程序）
+
+    状态封装
+    系统调用
+
+archtect
+
+    gdt    task_struct*    task_struct    ldt
+                                          tss    kernel_stack
+    idt    trap
+           system_call 
+
+
+kernel
+
+    中断处理程序
+        硬件中断处理程序
+            int0-16
+
+            int16-47
+                时钟中断
+                硬盘中断
+                软盘中断
+        系统调用处理程序
+            进程控制
+                fork
+                exit
+                signal
+                sys
+            文件系统
+                open
+                execve
+
+    通用程序
+        调度程序
+
+
+mm
+
+    三级地址映射
+        虚拟地址  -分段->  线性地址  -分页->  物理地址
+    虚存使用文件接口
+    需求加载  写时复制
+
+    页面异常处理程序
+        缺页处理程序
+        写保护处理程序
+
+
+fs
+    上层：文件系统接口
+    下层：设备驱动程序
+    主体：一组算法，如何把字节数组组织成文件目录结构
+
+    上层接口
+        open  
+        stat  
+        fcntl  
+        ioctl  
+        execve
+    文件类型
+        正规文件  
+        目录文件
+        块设备文件
+        字符设备文件
+        管道文件
+    主体实现
+        super
+        bitmap
+        inode
+        namei
+        truncate
+    缓冲
+        buffer
+        ll_rw_blk
+
+
+device
+    上层：设备接口
+    下层：硬件控制，中断处理
+    主体：需求处理，调度逻辑
+
+    块设备
+        ll_rw_blk
+            hd
+            floppy
+            ramdisk
+    字符设备
+        tty_io  tty_ioctl
+            keyboard  console
+            serial  rs_io
+
+
+
+
+    
+
+
+    
+            

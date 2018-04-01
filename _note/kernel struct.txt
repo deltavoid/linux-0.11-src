@@ -1,0 +1,18 @@
+
+
+
+kernel struct
+
+
+gdt    task_struct*    task_struct    ldt
+                                      tss    kernel_stack
+
+idt    trap
+       system_call 
+
+page_dir_table    page_table
+
+
+file
+
+device

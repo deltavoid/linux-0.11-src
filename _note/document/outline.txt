@@ -1,0 +1,25 @@
+
+
+1.summary
+
+
+2.program executing situation
+
+
+3.task_struct and kernel_stack
+
+
+4.interrupt
+
+
+5.memory
+
+
+
+6.file system
+
+
+7.device
+
+
+
