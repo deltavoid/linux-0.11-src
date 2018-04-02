@@ -1,0 +1,33 @@
+
+
+cpu interface
+
+
+instruciton set architect
+
+    计算指令集
+
+    特权指令集
+
+register state
+
+    通用寄存器
+        eax
+        ebx
+        ecx
+        edx
+        esi
+        edi
+        esp
+        ebp
+
+    系统寄存器
+        eip
+
+interrupt entry
+    处理器保留中断  0-31
+
+    中断控制器中断  32-47
+
+    用户自定义中断  48- 255
+        int128  系统调用
