@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "sched.h": "c",
+        "kernel.h": "c",
+        "sys.h": "c",
+        "fdreg.h": "c",
+        "system.h": "c",
+        "io.h": "c",
+        "segment.h": "c",
+        "signal.h": "c",
+        "types.h": "c"
+    }
+}

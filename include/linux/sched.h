@@ -50,26 +50,31 @@ struct i387_struct {
 
 struct tss_struct {
 	long	back_link;	/* 16 high bits zero */
+
 	long	esp0;
 	long	ss0;		/* 16 high bits zero */
 	long	esp1;
 	long	ss1;		/* 16 high bits zero */
 	long	esp2;
 	long	ss2;		/* 16 high bits zero */
+	
 	long	cr3;
 	long	eip;
 	long	eflags;
+	
 	long	eax,ecx,edx,ebx;
 	long	esp;
 	long	ebp;
 	long	esi;
 	long	edi;
+	
 	long	es;		/* 16 high bits zero */
 	long	cs;		/* 16 high bits zero */
 	long	ss;		/* 16 high bits zero */
 	long	ds;		/* 16 high bits zero */
 	long	fs;		/* 16 high bits zero */
 	long	gs;		/* 16 high bits zero */
+	
 	long	ldt;		/* 16 high bits zero */
 	long	trace_bitmap;	/* bits: trace 0, bitmap 16-31 */
 	struct i387_struct i387;
@@ -83,15 +88,17 @@ struct task_struct {
 	long signal;
 	struct sigaction sigaction[32];
 	long blocked;	/* bitmap of masked signals */
+
 /* various fields */
 	int exit_code;
-	unsigned long start_code,end_code,end_data,brk,start_stack;
-	long pid,father,pgrp,session,leader;
-	unsigned short uid,euid,suid;
-	unsigned short gid,egid,sgid;
+	unsigned long start_code, end_code, end_data, brk, start_stack;
+	long pid, father, pgrp, session, leader;
+	unsigned short uid, euid, suid;
+	unsigned short gid, egid, sgid;
 	long alarm;
-	long utime,stime,cutime,cstime,start_time;
+	long utime, stime, cutime, cstime, start_time;
 	unsigned short used_math;
+
 /* file system info */
 	int tty;		/* -1 if no tty, so it must be signed */
 	unsigned short umask;
@@ -100,10 +107,13 @@ struct task_struct {
 	struct m_inode * executable;
 	unsigned long close_on_exec;
 	struct file * filp[NR_OPEN];
+
 /* ldt for this task 0 - zero 1 - cs 2 - ds&ss */
 	struct desc_struct ldt[3];
+
 /* tss for this task */
 	struct tss_struct tss;
+
 };
 
 /*
@@ -162,6 +172,8 @@ __asm__("str %%ax\n\t" \
 	"shrl $4,%%eax" \
 	:"=a" (n) \
 	:"a" (0),"i" (FIRST_TSS_ENTRY<<3))
+
+
 /*
  *	switch_to(n) should switch tasks to task nr n, first
  * checking that n isn't the current task, in which case it does nothing.
@@ -175,6 +187,7 @@ __asm__("cmpl %%ecx,_current\n\t" \
 	"movw %%dx,%1\n\t" \
 	"xchgl %%ecx,_current\n\t" \
 	"ljmp %0\n\t" \
+	/*          */\
 	"cmpl %%ecx,_last_task_used_math\n\t" \
 	"jne 1f\n\t" \
 	"clts\n" \

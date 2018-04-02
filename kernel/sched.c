@@ -50,6 +50,7 @@ extern void mem_use(void);
 extern int timer_interrupt(void);
 extern int system_call(void);
 
+
 union task_union {
 	struct task_struct task;
 	char stack[PAGE_SIZE];
@@ -64,12 +65,15 @@ struct task_struct *last_task_used_math = NULL;
 
 struct task_struct * task[NR_TASKS] = {&(init_task.task), };
 
+
 long user_stack [ PAGE_SIZE>>2 ] ;
 
 struct {
 	long * a;
 	short b;
 	} stack_start = { & user_stack [PAGE_SIZE>>2] , 0x10 };
+
+
 /*
  *  'math_state_restore()' saves the current math information in the
  * old math state array, and gets the new ones from the current task
@@ -90,6 +94,7 @@ void math_state_restore()
 		current->used_math=1;
 	}
 }
+
 
 /*
  *  'schedule()' is the scheduler function. This is GOOD CODE! There
@@ -159,7 +164,9 @@ void sleep_on(struct task_struct **p)
 	tmp = *p;
 	*p = current;
 	current->state = TASK_UNINTERRUPTIBLE;
+
 	schedule();
+	
 	if (tmp)
 		tmp->state=0;
 }
