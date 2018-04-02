@@ -3,3 +3,5 @@
     进程1        进程2        进程3
     内核栈1      内核栈2       内核栈3    内核数据
     schedule
+
+one page: {{task_struct  {tss_struct  {i387_struct}}}  kernel stack                                 }
