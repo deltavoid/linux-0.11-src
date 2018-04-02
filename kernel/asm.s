@@ -144,3 +144,26 @@ _general_protection:
 	pushl $_do_general_protection
 	jmp error_code
 
+
+/*
+int0-15:
+    _divide_error:
+    _debug:
+    _nmi:
+    _int3:
+    _overflow:
+    _bounds:
+    _invalid_op:
+    //_device_not_available
+    _double_fault:
+    _coprocessor_segment_overrun:
+    _invalid_TSS:
+    _segment_not_present:
+    _stack_segment:
+    _general_protection:
+	//_page_fault
+    _reserved:
+
+    _irq13:  int45
+
+*/

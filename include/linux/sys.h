@@ -2,93 +2,146 @@
  * Why isn't this a .c file?  Enquiring minds....
  */
 
+
+/*hd.c*/
 extern int sys_setup();
+
+/*kernel*/
+/*fork.c*/
+extern int sys_fork();/*syscall.s*/
+
+/*exit.c*/
 extern int sys_exit();
-extern int sys_fork();
-extern int sys_read();
-extern int sys_write();
-extern int sys_open();
-extern int sys_close();
 extern int sys_waitpid();
-extern int sys_creat();
-extern int sys_link();
-extern int sys_unlink();
-extern int sys_execve();
-extern int sys_chdir();
-extern int sys_time();
-extern int sys_mknod();
-extern int sys_chmod();
-extern int sys_chown();
-extern int sys_break();
-extern int sys_stat();
-extern int sys_lseek();
-extern int sys_getpid();
-extern int sys_mount();
-extern int sys_umount();
-extern int sys_setuid();
-extern int sys_getuid();
-extern int sys_stime();
-extern int sys_ptrace();
-extern int sys_alarm();
-extern int sys_fstat();
-extern int sys_pause();
-extern int sys_utime();
-extern int sys_stty();
-extern int sys_gtty();
-extern int sys_access();
-extern int sys_nice();
-extern int sys_ftime();
-extern int sys_sync();
 extern int sys_kill();
-extern int sys_rename();
-extern int sys_mkdir();
-extern int sys_rmdir();
-extern int sys_dup();
-extern int sys_pipe();
-extern int sys_times();
-extern int sys_prof();
-extern int sys_brk();
-extern int sys_setgid();
-extern int sys_getgid();
+
+/*signal.c*/
 extern int sys_signal();
-extern int sys_geteuid();
-extern int sys_getegid();
-extern int sys_acct();
-extern int sys_phys();
-extern int sys_lock();
-extern int sys_ioctl();
-extern int sys_fcntl();
-extern int sys_mpx();
-extern int sys_setpgid();
-extern int sys_ulimit();
-extern int sys_uname();
-extern int sys_umask();
-extern int sys_chroot();
-extern int sys_ustat();
-extern int sys_dup2();
-extern int sys_getppid();
-extern int sys_getpgrp();
-extern int sys_setsid();
 extern int sys_sigaction();
 extern int sys_sgetmask();
 extern int sys_ssetmask();
+extern int sys_sigpending();/*-ENOSYS*/
+extern int sys_sigsuspend();/*-ENOSYS*/
+
+/*sched.c*/
+extern int sys_alarm();
+extern int sys_pause();
+extern int sys_nice();
+
+/*sys.c*/
+extern int sys_getpid();
+extern int sys_setuid();
+extern int sys_getuid();
+extern int sys_setgid();
+extern int sys_getgid();
+extern int sys_geteuid();
+extern int sys_getegid();
+extern int sys_setpgid();
+extern int sys_getppid();
+extern int sys_setsid();
 extern int sys_setreuid();
 extern int sys_setregid();
-extern int sys_sigpending();
-extern int sys_sigsuspend();
+extern int sys_getpgrp();
+
+extern int sys_time();
+extern int sys_times();
+extern int sys_stime();
+
+extern int sys_brk();
+extern int sys_uname();
+extern int sys_umask();
+
+/*-ENOSYS*/
+extern int sys_getgroups();
+extern int sys_setgroups();
+extern int sys_ftime();
+extern int sys_gettimeofday();
+extern int sys_settimeofday();
+extern int sys_break();
+
+extern int sys_ptrace();
+extern int sys_stty();
+extern int sys_gtty();
+extern int sys_prof();
+extern int sys_acct();
+
+extern int sys_phys();
+extern int sys_lock();
+extern int sys_mpx();
+extern int sys_ulimit();
 extern int sys_sethostname();
 extern int sys_setrlimit();
 extern int sys_getrlimit();
 extern int sys_getrusage();
-extern int sys_gettimeofday();
-extern int sys_settimeofday();
-extern int sys_getgroups();
-extern int sys_setgroups();
-extern int sys_select();
-extern int sys_symlink();
+extern int sys_rename();
+
+
+
+/*fs*/
+/*open.c*/
+extern int sys_open();
+extern int sys_close();
+extern int sys_creat();
+extern int sys_chdir();
+extern int sys_chroot();
+extern int sys_chmod();
+extern int sys_chown();
+extern int sys_utime();
+extern int sys_access();
+extern int sys_ustat();
+
+/*fcntl.c*/
+extern int sys_fcntl();
+extern int sys_dup();
+extern int sys_dup2();
+
+/*ioctl.c*/
+extern int sys_ioctl();
+
+/*stat.c*/
+extern int sys_stat();
+extern int sys_fstat();
 extern int sys_lstat();
 extern int sys_readlink();
-extern int sys_uselib();
+
+/*select.c*/
+extern int sys_select();
+
+/*execve.c*/
+extern int sys_execve();
+extern int sys_uselib();/*-ENOSYS*/
+
+
+/*read_write.c*/
+extern int sys_read();
+extern int sys_write();
+extern int sys_lseek();
+
+/*pipe.c*/
+extern int sys_pipe();
+
+
+/*super.c*/
+extern int sys_mount();
+extern int sys_umount();
+
+/*namei.c*/
+extern int sys_link();
+extern int sys_unlink();
+extern int sys_mknod();
+extern int sys_mkdir();
+extern int sys_rmdir();
+extern int sys_symlink();
+
+
+/*buffer.c*/
+extern int sys_sync();
+
+
+
+
+
+
 
 fn_ptr sys_call_table[] = { sys_setup, sys_exit, sys_fork, sys_read,
 sys_write, sys_open, sys_close, sys_waitpid, sys_creat, sys_link,

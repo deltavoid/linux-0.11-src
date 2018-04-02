@@ -40,5 +40,5 @@ _page_fault:
 	iret
 
 /*
-    int14  page_fault
+    page_fault:  int14  
 */
