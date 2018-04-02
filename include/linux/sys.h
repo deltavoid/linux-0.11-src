@@ -3,32 +3,32 @@
  */
 
 
-//hd.c
+/*hd.c*/
 extern int sys_setup();
 
-//kernel
-//fork.c
-extern int sys_fork();//syscall.s
+/*kernel*/
+/*fork.c*/
+extern int sys_fork();/*syscall.s*/
 
-//exit.c
+/*exit.c*/
 extern int sys_exit();
 extern int sys_waitpid();
 extern int sys_kill();
 
-//signal.c
+/*signal.c*/
 extern int sys_signal();
 extern int sys_sigaction();
 extern int sys_sgetmask();
 extern int sys_ssetmask();
-extern int sys_sigpending();//-ENOSYS
-extern int sys_sigsuspend();//-ENOSYS
+extern int sys_sigpending();/*-ENOSYS*/
+extern int sys_sigsuspend();/*-ENOSYS*/
 
-//sched.c
+/*sched.c*/
 extern int sys_alarm();
 extern int sys_pause();
 extern int sys_nice();
 
-//sys.c
+/*sys.c*/
 extern int sys_getpid();
 extern int sys_setuid();
 extern int sys_getuid();
@@ -51,7 +51,7 @@ extern int sys_brk();
 extern int sys_uname();
 extern int sys_umask();
 
-//-ENOSYS
+/*-ENOSYS*/
 extern int sys_getgroups();
 extern int sys_setgroups();
 extern int sys_ftime();
@@ -77,8 +77,8 @@ extern int sys_rename();
 
 
 
-//fs
-//open.c
+/*fs*/
+/*open.c*/
 extern int sys_open();
 extern int sys_close();
 extern int sys_creat();
@@ -90,42 +90,42 @@ extern int sys_utime();
 extern int sys_access();
 extern int sys_ustat();
 
-//fcntl.c
+/*fcntl.c*/
 extern int sys_fcntl();
 extern int sys_dup();
 extern int sys_dup2();
 
-//ioctl.c
+/*ioctl.c*/
 extern int sys_ioctl();
 
-//stat.c
+/*stat.c*/
 extern int sys_stat();
 extern int sys_fstat();
 extern int sys_lstat();
 extern int sys_readlink();
 
-//select.c
+/*select.c*/
 extern int sys_select();
 
-//execve.c
+/*execve.c*/
 extern int sys_execve();
-extern int sys_uselib();//-ENOSYS
+extern int sys_uselib();/*-ENOSYS*/
 
 
-//read_write.c
+/*read_write.c*/
 extern int sys_read();
 extern int sys_write();
 extern int sys_lseek();
 
-//pipe.c
+/*pipe.c*/
 extern int sys_pipe();
 
 
-//super.c
+/*super.c*/
 extern int sys_mount();
 extern int sys_umount();
 
-//namei.c
+/*namei.c*/
 extern int sys_link();
 extern int sys_unlink();
 extern int sys_mknod();
@@ -134,7 +134,7 @@ extern int sys_rmdir();
 extern int sys_symlink();
 
 
-//buffer.c
+/*buffer.c*/
 extern int sys_sync();
 
 
