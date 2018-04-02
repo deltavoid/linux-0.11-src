@@ -283,3 +283,22 @@ _parallel_interrupt:
 	outb %al,$0x20
 	popl %eax
 	iret
+
+/*
+
+    _device_not_available:  int7
+	
+	_coprocessor_error:  int16
+
+    _timer_interrupt:  int32  irq0
+    _hd_interrupt:  int46  irq14
+    _floppy_interrupt:  int38  irq6
+    _parallel_interrupt:  int39  irq7
+
+	_system_call:  int0x80
+
+    _sys_execve:
+    _sys_fork:
+
+
+*/

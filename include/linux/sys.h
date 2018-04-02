@@ -3,10 +3,10 @@
  */
 
 
+//hd.c
 extern int sys_setup();
 
 //kernel
-
 //fork.c
 extern int sys_fork();//syscall.s
 
