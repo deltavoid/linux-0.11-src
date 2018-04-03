@@ -1,0 +1,23 @@
+
+
+    进程1        进程2        进程3
+    内核栈1      内核栈2       内核栈3    内核数据
+    schedule
+
+one page: {{task_struct  {tss_struct  {i387_struct}}}                           kernel stack  }
+
+cpu interface 
+    指令集
+    寄存器
+    中断处理
+
+进程 * 资源
+
+    通断之间有内容
+    一阴一阳之谓道
+
+interrupt
+         schedule
+    fork
+    exit
+
