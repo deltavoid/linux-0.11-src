@@ -31,3 +31,13 @@ interrupt entry
 
     用户自定义中断  48- 255
         int128  系统调用
+
+segment management
+
+
+page management
+
+
+task management
+
+
