@@ -48,7 +48,20 @@ register state
         GS
         
 
-interrupt entry
+segment management
+
+    GDT ------ LDT
+           |
+    IDT    --- TSS
+
+
+
+page management
+
+    页目录表    页表    页帧
+
+
+interrupt handle
     处理器保留中断  0-31
 
     中断控制器中断  32-47
@@ -56,12 +69,11 @@ interrupt entry
     用户自定义中断  48- 255
         int128  系统调用
 
-segment management
-
-
-page management
 
 
 task management
+
+    任务切换，TSS
+
 
 
