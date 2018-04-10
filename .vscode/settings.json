@@ -8,6 +8,7 @@
         "io.h": "c",
         "segment.h": "c",
         "signal.h": "c",
-        "types.h": "c"
+        "types.h": "c",
+        "head.h": "c"
     }
 }
