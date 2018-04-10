@@ -1,0 +1,6 @@
+
+
+
+页目录表  页表*4    IDT  GDT    task[NR_TASKS]  current    jiffies
+
+                              {{task_struct  {ldt_struct} {tss_struct  {i387_struct}}}                   kernel stack  } * 进程数
